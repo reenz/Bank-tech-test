@@ -1,8 +1,13 @@
 describe ('Feature test',function(){
     var bank;
-    bank = new Bank();
+    
 
     describe('Bank',function(){
+
+        beforeEach(function() {
+            bank = new Bank();
+        });
+
         it('displays initial balance',function(){
             expect(bank.currentBalance()).toEqual(0);
         });
@@ -13,8 +18,15 @@ describe ('Feature test',function(){
         });
 
         it('customer can withdraw ',function(){
+            bank.depositAmount(1000);
             bank.withdrawAmount(500);
             expect(bank.currentBalance()).toEqual(500);
+        });
+    
+        it('multiple deposit ',function(){
+            bank.depositAmount(1000);
+            bank.depositAmount(1500);
+            expect(bank.currentBalance()).toEqual(2500);
         });
     });
 });
