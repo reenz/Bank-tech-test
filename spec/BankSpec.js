@@ -11,5 +11,10 @@ describe ('Feature test',function(){
             bank.depositAmount(1000);
             expect(bank.currentBalance()).toEqual(1000);
         });
+
+        it('customer can withdraw ',function(){
+            bank.withdrawAmount(500);
+            expect(bank.currentBalance()).toEqual(500);
+        });
     });
 });
