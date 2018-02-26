@@ -1,5 +1,9 @@
 ## Bank-tech-test
 
+#Technologies Used
+-Javascript
+-Jasmine testing library
+
 ## User Stories
 
 ```
