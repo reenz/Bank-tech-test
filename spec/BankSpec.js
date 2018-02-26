@@ -6,5 +6,10 @@ describe ('Feature test',function(){
         it('displays initial balance',function(){
             expect(bank.currentBalance()).toEqual(0);
         });
+
+        it('customer can deposit ',function(){
+            bank.depositAmount(1000);
+            expect(bank.currentBalance()).toEqual(1000);
+        });
     });
 });
