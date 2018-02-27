@@ -6,9 +6,9 @@ function Transaction(amt, type, balance) {
 
 Transaction.prototype.toString = function() {
     if (this.type === CREDIT) {
-        return (this.date() + " || "+ this.amt + " || "  + " || " + this.balance );
+        return (this.date() + " || "+ (this.amt).toFixed(2) + " || "  + " || " + this.balance.toFixed(2) );
     } else {
-        return (this.date() + " || " +  " || " + this.amt + " || " + this.balance );
+        return (this.date() + " || " +  " || " + (this.amt).toFixed(2) + " || " + this.balance.toFixed(2) );
     }
 };
 

@@ -39,15 +39,15 @@ describe ('Feature test',function(){
 
         it('displays one transaction',function(){
             bank.depositAmount(1000);
-            var expected = "25/2/2018 || 1000 ||  || 1000";
+            var expected = "25/2/2018 || 1000.00 ||  || 1000.00";
             expect(bank.printStatement()).toContain(expected);
         });
 
         it('displays two transaction',function(){
             bank.depositAmount(1000);
             bank.withdrawAmount(500);
-            var expected = ("25/2/2018 || 1000 ||  || 1000",
-            "25/2/2018 ||  || 500 || 500");
+            var expected = ("25/2/2018 || 1000.00 ||  || 1000.00",
+            "25/2/2018 ||  || 500.00 || 500.00");
             expect(bank.printStatement()).toContain(expected);
         });
 

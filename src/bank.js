@@ -27,10 +27,11 @@ Bank.prototype.withdrawAmount = function(amount){
 };
 
 Bank.prototype.printStatement = function() {
-    var str = '';
-    this.statement.forEach(st => {
+    var header = 'date  || credit || debit || balance \n';
+    var str = "";
+    this.statement.reverse().forEach(st => {
         str += (st + "\n");
     });
-    return str;
+    return header + str;
 };
 
