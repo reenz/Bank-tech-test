@@ -30,19 +30,30 @@ describe ('Feature test',function(){
     });
 
     describe('bank statement',function(){
+        beforeEach(function() {
+            jasmine.clock().install();
+            var baseTime = new Date(2018, 1, 25);
+            jasmine.clock().mockDate(baseTime);
+        });
+        
+
         it('displays one transaction',function(){
             bank.depositAmount(1000);
-            var expected = "27/2/2018 || 1000 ||  || 1000";
+            var expected = "25/2/2018 || 1000 ||  || 1000";
             expect(bank.printStatement()).toContain(expected);
         });
 
         it('displays two transaction',function(){
             bank.depositAmount(1000);
             bank.withdrawAmount(500);
-            var expected = ("27/2/2018 || 1000 ||  || 1000",
-            "27/2/2018 ||  || 500 || 500");
+            var expected = ("25/2/2018 || 1000 ||  || 1000",
+            "25/2/2018 ||  || 500 || 500");
             expect(bank.printStatement()).toContain(expected);
         });
+
+        afterEach(function() {
+            jasmine.clock().uninstall();
+          });
         
     });
 });
