@@ -1,8 +1,8 @@
 ## Bank-tech-test
 
 #Technologies Used
--Javascript
--Jasmine testing library
+* Javascript
+* Jasmine testing library
 
 ## User Stories
 
@@ -29,4 +29,10 @@ As a Customer
 I want to print satement
 So that I can see all my transactions
 ```
+## Console screen shot
+![Console screen shot](/Public/consoleScreenshot.png)
 
+## How to use:
+* Clone it
+* Run following (open SpecRunner.html) from terminal
+* Open console and run commands as per screenshot
